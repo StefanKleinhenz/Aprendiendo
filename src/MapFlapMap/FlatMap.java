@@ -14,6 +14,7 @@ public class FlatMap {
 		.distinct()
 		.collect(Collectors.toList());
 
+        mm.stream().forEach(System.out::println);
 		
 	}
     
