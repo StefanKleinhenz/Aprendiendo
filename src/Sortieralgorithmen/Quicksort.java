@@ -3,10 +3,10 @@ package Sortieralgorithmen;
 import java.util.Random;
 
 public class Quicksort {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
 		Random random = new Random();
-		
+
 		int[] numbers = new int[7];
 
 		for (int i = 0; i < numbers.length; i++) {
@@ -41,8 +41,8 @@ public class Quicksort {
 
 		int leftPointer = lowIndex;
 		int rightPointer = highIndex;
-		
-		//Lösung mit for schleife, meine Lösung
+
+		// Lösung mit for schleife, meine Lösung
 
 		if (leftPointer != rightPointer) {
 			for (int i = 0; i < numbers.length; i++) {
@@ -56,36 +56,35 @@ public class Quicksort {
 			}
 		}
 		swap(numbers, leftPointer, highIndex);
-		
 
 		quicksort(numbers, lowIndex, leftPointer - 1);
 		quicksort(numbers, leftPointer + 1, highIndex);
-		
-		//Video Lösung
 
-//		while (leftPointer != rightPointer) {
-//
-//			while (numbers[leftPointer] <= pivot && leftPointer != rightPointer) {
-//
-//				leftPointer++;
-//			}
-//
-//			while (numbers[rightPointer] >= pivot && leftPointer != rightPointer) {
-//				rightPointer--;
-//			}
-//
-//			System.out.println("value leftpinter array: " + numbers[leftPointer]);
-//			System.out.println("value rightpointer array: " + numbers[rightPointer]);
-//			System.out.println();
-//			printArray(numbers);
-//
-//			swap(numbers, leftPointer, rightPointer);
-//		}
-//
-//		swap(numbers, leftPointer, highIndex);
-//
-//		quicksort(numbers, lowIndex, leftPointer - 1);
-//		quicksort(numbers, leftPointer + 1, highIndex);
+		// Video Lösung
+
+		// while (leftPointer != rightPointer) {
+		//
+		// while (numbers[leftPointer] <= pivot && leftPointer != rightPointer) {
+		//
+		// leftPointer++;
+		// }
+		//
+		// while (numbers[rightPointer] >= pivot && leftPointer != rightPointer) {
+		// rightPointer--;
+		// }
+		//
+		// System.out.println("value leftpinter array: " + numbers[leftPointer]);
+		// System.out.println("value rightpointer array: " + numbers[rightPointer]);
+		// System.out.println();
+		// printArray(numbers);
+		//
+		// swap(numbers, leftPointer, rightPointer);
+		// }
+		//
+		// swap(numbers, leftPointer, highIndex);
+		//
+		// quicksort(numbers, lowIndex, leftPointer - 1);
+		// quicksort(numbers, leftPointer + 1, highIndex);
 
 	}
 
@@ -106,5 +105,5 @@ public class Quicksort {
 		System.out.println("\n");
 
 	}
-    
+
 }
