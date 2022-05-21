@@ -6,12 +6,39 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BinäreSuche",
+            "request": "launch",
+            "mainClass": "Sortieralgorithmen.BinäreSuche",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Mergesort",
+            "request": "launch",
+            "mainClass": "Sortieralgorithmen.Mergesort",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Quicksort",
+            "request": "launch",
+            "mainClass": "Sortieralgorithmen.Quicksort",
+            "projectName": "Aprendiendo_75f84454"
+        },
+        {
+            "type": "java",
             "name": "Launch External Terminal",
             "request": "launch",
             "console": "integratedTerminal",
             "mainClass": ""
         },
-        
         {
             "type": "java",
             "name": "Launch Current File",
