@@ -1,0 +1,3 @@
+Es besagt, dass ein Programm, das Objekte einer Basisklasse T verwendet,
+auch mit Objekten der davon abgeleiteten Klasse S korrekt funktionieren muss, ohne dabei das Programm zu verändern.
+Eine Instanz einer Subklasse, kann man überall da einsetzen können, wo eine Instanz der Superklasse ist.
