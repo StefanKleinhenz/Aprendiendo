@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Generics.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
             "name": "Launch BinäreSuche",
             "request": "launch",
             "mainClass": "Sortieralgorithmen.BinäreSuche",
