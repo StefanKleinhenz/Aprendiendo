@@ -3,10 +3,11 @@ package Generics;
 public class Main {
     public static void main(String[] args) {
 
-        Printer<Integer> printer = new Printer<>(23);
+        Printer<Cat> printer = new Printer<>(new Cat());
         printer.print();
+        
 
-        Printer<String> printerString = new Printer<>("hello");
+        Printer<Dog> printerString = new Printer<>(new Dog());
         printerString.print();
     }
     

@@ -1,6 +1,6 @@
 package Generics;
 
-public class Printer <T> {
+public class Printer <T extends Animal> {
     
     T thingToPrint;
 
@@ -9,6 +9,7 @@ public class Printer <T> {
     }
 
     public void print() {
+        thingToPrint.eat();
         System.out.println(thingToPrint);
     }
 
