@@ -1,9 +1,8 @@
 package MapFlapMap;
+
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FlapMapvsMap {
 
@@ -23,14 +22,14 @@ public class FlapMapvsMap {
 		emails.forEach(System.out::println);
 		System.out.println();
 
-//		//customer -> customer.getPhoneNumbers () ->> one to many mapping
+		// //customer -> customer.getPhoneNumbers () ->> one to many mapping
 
 		List<List<String>> phoneNumbers = customers.stream().map(customer -> customer.getPhoneNumbers())
 				.collect(Collectors.toList());
 		phoneNumbers.forEach(System.out::println);
 
 		System.out.println();
-		
+
 		List<String> phones = customers.stream().flatMap(customer -> customer.getPhoneNumbers().stream())
 				.collect(Collectors.toList());
 		phones.forEach(System.out::println);

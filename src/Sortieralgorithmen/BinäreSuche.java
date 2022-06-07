@@ -1,7 +1,5 @@
 package Sortieralgorithmen;
 
-import java.util.Arrays;
-
 public class BinäreSuche {
 
     // binary search = Search algorithm that finds the position
