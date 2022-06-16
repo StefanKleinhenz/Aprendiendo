@@ -1,7 +1,6 @@
-package Interfaces;
+package Interfaces.VorlesungBeispiel;
 
-public class Superman implements Flieger {
-    private static final Superman obj = new Superman();
+public class Flugzeug implements Flieger{
 
     @Override
     public void starten() {
@@ -20,11 +19,5 @@ public class Superman implements Flieger {
         // TODO Auto-generated method stub
         
     }
-    public void weltretten(){
-
-    }
-    public static Superman getInstance() {
-        return obj;
-      }
     
 }

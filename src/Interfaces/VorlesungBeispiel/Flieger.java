@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.VorlesungBeispiel;
 
 public interface Flieger {
 

@@ -1,6 +1,6 @@
-package Interfaces;
+package Interfaces.VorlesungBeispiel;
 
-public class Flugzeug implements Flieger{
+public class Ente implements Flieger {
 
     @Override
     public void starten() {
@@ -19,5 +19,10 @@ public class Flugzeug implements Flieger{
         // TODO Auto-generated method stub
         
     }
-    
+    public void eierLegen(){
+
+    }
+    public void schwimmen(){
+
+    }
 }

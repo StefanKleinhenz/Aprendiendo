@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.VorlesungBeispiel;
 
 public class Flughafen {
 
@@ -13,5 +13,5 @@ public class Flughafen {
         superman.starten();
         superman.landen();
     }
-    
+
 }

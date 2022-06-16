@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Interfaces.Interfaces2.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Herencia.Ejercicio.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Polymorphie",
+            "request": "launch",
+            "mainClass": "Polymorphismus.Vorlesung.Polymorphie",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Personalverwaltung",
+            "request": "launch",
+            "mainClass": "Polymorphismus.Vorlesung.Personalverwaltung",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "Polymorphismus.Vorlesung.test",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
             "name": "Launch test",
             "request": "launch",
             "mainClass": "Generics.test",
