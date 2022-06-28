@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArbolBinario",
+            "request": "launch",
+            "mainClass": "Arboles.ArbolBinario",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Baum",
+            "request": "launch",
+            "mainClass": "Bäume.Baum",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Polymorphismus.Ejercicio.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "Interfaces.Interfaces2.Main",
