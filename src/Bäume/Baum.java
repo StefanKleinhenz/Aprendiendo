@@ -3,80 +3,49 @@ package Bäume;
 public class Baum {
 
     Knoten wurzel;
-    int größeBaum;
+    int größe;
 
     public Baum() {
-        wurzel = null;
-        größeBaum = 0;
+        this.wurzel = null;
+        this.größe = 0;
     }
 
-    public static void main(String[] args) {
+    public boolean istLeer() {
 
-        Baum baum = new Baum();
-
-        baum.einfügen(10);
-        baum.einfügen(5);
-        baum.einfügen(18);
-        baum.einfügen(2);
-        baum.einfügen(7);
-        baum.einfügen(9);
-        baum.einfügen(15);
-        baum.einfügen(24);
-
-        System.out.println("Preorder");
-        baum.preOrder(baum.wurzel);
-
-        System.out.println("Inorder");
-        baum.inOrder(baum.wurzel);
-
-        System.out.println("Postorder");
-        baum.postOrder(baum.wurzel);
-
-        // System.out.println(baum.wurzel.toString());
+        return wurzel == null;
     }
 
-    public void preOrder(Knoten k) {
-        System.out.println(k.wert);
-        if (k.links != null)
-            preOrder(k.links);
-        if (k.rechts != null)
-            preOrder(k.rechts);
+    public Knoten einfügenMitRekursion(Knoten wurzel,int wert) {
+        
+        if (wurzel == null) {
+            wurzel = new Knoten(wert);
+        }
+        if (wert<wurzel.wert) {
+            wurzel.links=einfügenMitRekursion(wurzel.links, wert);
+        } else if (wert > wurzel.wert) {
+            wurzel.rechts = einfügenMitRekursion(wurzel.rechts, wert);
+        }
+        return wurzel;
+
     }
 
-    public void inOrder(Knoten k) {
-        if (k.links != null)
-            inOrder(k.links);
-        System.out.println(k.wert);
-        if (k.rechts != null)
-            inOrder(k.rechts);
-    }
-
-    public void postOrder(Knoten k) {
-        if (k.links != null)
-            postOrder(k.links);
-        if (k.rechts != null)
-            postOrder(k.rechts);
-       System.out.println(k.wert);
-    }
-
-    public void einfügen(int wert) {
+    public void einfuegen(int wert) {
 
         Knoten neuerKnoten = new Knoten(wert);
 
-        if (wurzel == null) {
-
+        if (istLeer()) {
             wurzel = neuerKnoten;
-
         } else {
-            Knoten aux = wurzel;
+            Knoten pointer = wurzel;
             Knoten vater = null;
 
-            while (aux != null) {
-                vater = aux;
-                if (wert < aux.wert) {
-                    aux = aux.links;
+            while (pointer != null) {
+                vater = pointer;
+
+                if (wert < pointer.wert) {
+                    pointer = pointer.links;
                 } else {
-                    aux = aux.rechts;
+                    pointer = pointer.rechts;
                 }
 
             }
@@ -84,6 +53,213 @@ public class Baum {
                 vater.links = neuerKnoten;
             } else {
                 vater.rechts = neuerKnoten;
+            }
+
+        }
+
+    }
+
+    public boolean knotenLöschen(int wert) {
+
+        Knoten pointer = wurzel;
+        Knoten vater = null;
+        boolean isLinkesKind = true;
+
+        while (wert != pointer.wert) {
+            vater = pointer;
+
+            if (wert < pointer.wert) {
+                pointer = pointer.links;
+                isLinkesKind = true;
+            } else {
+                pointer = pointer.rechts;
+                isLinkesKind = false;
+            }
+            if (pointer == null) {
+                return false;
+            }
+
+        }
+
+        if (pointer.isBlatt()) {
+
+            löschenKnotenBlatt(vater, pointer, isLinkesKind);
+
+        } else if (pointer.links == null || pointer.rechts == null) {
+            löschenKnotenMitEinemKind(vater, pointer, isLinkesKind);
+        }
+
+        return true;
+
+    }
+
+    private void löschenKnotenMitEinemKind(Knoten vater, Knoten pointer, boolean isLinkesKind) {
+
+        //Wenn das rechte Kind null ist, wissen wir, dass wir nur ein linkes Kind haben
+        if (pointer.rechts == null) {
+            if (pointer == wurzel) {
+                wurzel = pointer.links;
+
+            } else if (isLinkesKind) {
+                vater.links = pointer.links;
+            } else {
+                vater.rechts = pointer.links;
+            }
+        // Wenn das linke Kind null ist, wissen wir, dass wir ein rechtes Kind haben
+        } else if (pointer.links == null) {
+
+            if (pointer == wurzel) {
+                wurzel = pointer.rechts;
+
+            } else if (isLinkesKind) {
+                vater.links = pointer.rechts;
+            } else {
+                vater.rechts = pointer.rechts;
+            }
+        }
+
+    }
+
+    private void löschenKnotenBlatt(Knoten vater, Knoten pointer, boolean isLinkesKind) {
+
+        if (pointer == wurzel) {
+            wurzel = null;
+        } else if (isLinkesKind) {
+            vater.links = null;
+        } else {
+            vater.rechts = null;
+        }
+    }
+
+    @Deprecated
+    public boolean knotenLoeschen(int wert) {
+
+        Knoten pointer = wurzel;
+        Knoten vater = null;
+        boolean isLinkesKind = false;
+
+        while (pointer.wert != wert) {
+            vater = pointer;
+
+            if (wert < pointer.wert) {
+                isLinkesKind = true;
+                pointer = pointer.links;
+
+            } else {
+                isLinkesKind = false;
+                pointer = pointer.rechts;
+            }
+            if (pointer == null) {
+                return false;
+            }
+        } // fin while
+
+        if (pointer.isBlatt()) { // esto quiere decir que es una hoja
+            if (pointer == wurzel) {
+                wurzel = null;
+            } else if (isLinkesKind) {
+                vater.links = null;
+            } else {
+                vater.rechts = null;
+            }
+
+        } else if (pointer.rechts == null) {
+            if (pointer == wurzel) {
+                wurzel = pointer.links;
+            } else if (isLinkesKind) {
+                vater.links = pointer.links;
+            } else {
+                vater.rechts = pointer.links;
+            }
+
+        } else if (pointer.links == null) {
+
+            if (pointer == wurzel) {
+                wurzel = pointer.rechts;
+            } else if (isLinkesKind) {
+                vater.links = pointer.rechts;
+            } else {
+                vater.rechts = pointer.rechts;
+            }
+
+        } else {
+            Knoten ersatz = getKnotenErsatz(pointer);
+
+            if (pointer == wurzel) {
+                wurzel = ersatz;
+
+            } else if (isLinkesKind) {
+                vater.links = ersatz;
+            } else {
+                vater.rechts = ersatz;
+            }
+            ersatz.links = pointer.links;
+        }
+
+        return true;
+
+    }
+
+    private Knoten getKnotenErsatz(Knoten ersatzKnoten) {
+
+        Knoten vaterErsatz = ersatzKnoten;
+        Knoten ersatz = ersatzKnoten;
+        Knoten pointer = ersatzKnoten.rechts;
+
+        while (pointer != null) {
+
+            vaterErsatz = ersatzKnoten;
+            ersatz = pointer;
+            pointer = pointer.links;
+
+        }
+        if (ersatz != ersatzKnoten.rechts) {
+            ersatzKnoten.links = ersatz.rechts;
+            ersatz.rechts = ersatzKnoten.rechts;
+        }
+
+        System.out.println("Der Knoten erstatz ist: " + ersatz);
+        return ersatz;
+    }
+
+    public boolean knotenFinden(int wert) {
+
+        Knoten pointer = wurzel;
+        Knoten vater = null;
+
+        while (wert != pointer.wert) {
+            vater = pointer;
+
+            if (wert < pointer.wert) {
+                pointer = pointer.links;
+            } else {
+                pointer = pointer.rechts;
+            }
+            if (wert != pointer.wert) {
+                return false;
+            }
+
+        }
+
+        return true;
+    }
+
+    public void preOrder(Knoten knoten) {
+
+        if (istLeer()) {
+            System.out.println("Der Baum ist leer, fuegen Sie erstmal ein paar Knoten ein.");
+            System.out.println();
+        } else {
+
+            System.out.println(knoten.wert);
+
+            if (knoten.links != null) {
+                preOrder(knoten.links);
+            }
+
+            if (knoten.rechts != null) {
+                preOrder(knoten.rechts);
+
             }
         }
 
@@ -98,31 +274,21 @@ public class Baum {
         public Knoten(int wert) {
 
             this.wert = wert;
-            links = null;
-            rechts = null;
+            this.links = null;
+            this.rechts = null;
 
         }
 
-        public int getWert() {
-            return wert;
-        }
+        public boolean isBlatt() {
 
-        public Knoten getLinks() {
-            return links;
-        }
-
-        public Knoten getRechts() {
-            return rechts;
-        }
-
-        public void setWert(int wert) {
-            this.wert = wert;
+            return (links == null && rechts == null);
         }
 
         @Override
         public String toString() {
-            return "Knoten [wert=" + wert + ", links=" + links + ", rechts=" + rechts + "]";
+            return "Knoten, Wert" + wert + ", links=" + links + ", rechts=" + rechts;
         }
 
     }
+
 }
