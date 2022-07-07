@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Graphen.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
             "name": "Launch ArbolBinario",
             "request": "launch",
             "mainClass": "Arboles.ArbolBinario",

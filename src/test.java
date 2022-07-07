@@ -1,3 +1,8 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class test {
 
     public static void main(String[] args) {
@@ -17,7 +22,6 @@ public class test {
         intArray2[3] = 6;
         intArray2[4] = 6;
 
-
         // intArray = intArray2;
 
         for (int i : intArray) {
@@ -26,4 +30,26 @@ public class test {
         System.out.println(intArray);
 
     }
+}
+
+class Test2 {
+
+    public static void main(String[] args) throws IOException {
+        InputStream is = null;
+        try {
+            is = new FileInputStream("Test.txt");
+            int data = is.read();
+            while (data != 1) {
+                System.out.println((char) data);
+                data = is.read();
+            }
+        } finally {
+            if (is != null) {
+                is.close();
+                
+            }
+            
+        }
+    }
+
 }
