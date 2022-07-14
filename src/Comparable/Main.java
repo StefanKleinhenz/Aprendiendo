@@ -9,11 +9,8 @@ import java.util.function.DoubleFunction;
 public class Main {
     public static void main(String[] args) {
 
-
         DoubleFunction sinus = (x) -> Math.sin(x);
 
-
-        
         System.out.println(sinus.apply(4));
 
         List<Laptop> listLaptops = new ArrayList<>();
