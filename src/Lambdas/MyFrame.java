@@ -13,6 +13,8 @@ public class MyFrame {
         JButton button2 = new JButton("Ich teste immer noch lambdas");
         button.setBounds(100, 100, 200, 200);
         button2.setBounds(100, 300, 100, 200);
+
+        
         button.addActionListener((e)->{System.out.println("Oh hell yeah");});
         button2.addActionListener(new ActionListener(){
 

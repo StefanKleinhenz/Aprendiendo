@@ -6,6 +6,97 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Bauobjekt",
+            "request": "launch",
+            "mainClass": "Streams.Bauobjekt",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch fff",
+            "request": "launch",
+            "mainClass": "fff",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Sincro",
+            "request": "launch",
+            "mainClass": "Thread.Sincro",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClasePrincipal",
+            "request": "launch",
+            "mainClass": "Thread.ClasePrincipal",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Thread.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch echnung",
+            "request": "launch",
+            "mainClass": "Lambdas.echnung",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Comparable.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Streams.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch flatM",
+            "request": "launch",
+            "mainClass": "Streams.idk.flatM",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch k",
+            "request": "launch",
+            "mainClass": "Streams.idk.k",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Streams.idk.Main",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
+            "name": "Launch Mainn",
+            "request": "launch",
+            "mainClass": "Streams.Mainn",
+            "projectName": "Aprendiendo"
+        },
+        {
+            "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "Graphen.Main",
